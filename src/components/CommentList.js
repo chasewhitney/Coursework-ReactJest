@@ -20,8 +20,8 @@ class CommentList extends Component {
   };
 };
 
-function mapPropsToState({ comments }) {
+function mapStateToProps({ comments }) {
   return { comments };
 };
 
-export default connect(mapPropsToState)(CommentList);
+export default connect(mapStateToProps)(CommentList);
