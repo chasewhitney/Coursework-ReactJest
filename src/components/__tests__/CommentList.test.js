@@ -7,11 +7,18 @@ import CommentList from 'components/CommentList';
 let wrapped;
 
 beforeEach(() => {
-  wrapped = mount(<Root><CommentList /></Root>);
+  initialState {comments: ['123','abc']};
+
+  wrapped = mount(
+    <Root initialState={initialState}>
+      <CommentList />
+    </Root>
+  );
+
 });
 
 
 it('creates one <li> per comment',() => {
-  console.log(`wrapped.props: ${wrapped.props}`);
+
   expect(1).toEqual(1);
 });
