@@ -10,3 +10,7 @@ it('properly hands off actions with type CREATE_COMMENT',() => {
 
   expect(CommentReducer([], action)).toEqual(["new comment"]);
 });
+
+it('properly handles action with unknown type',() => {
+  expect(CommentReducer([1], {})).toEqual([1]);
+});
