@@ -5,9 +5,10 @@ import Root from 'Root';
 import CommentList from 'components/CommentList';
 
 let wrapped;
+let initialState;
 
 beforeEach(() => {
-  initialState {comments: ['123','abc']};
+  initialState = {comments: ['123','abc']};
 
   wrapped = mount(
     <Root initialState={initialState}>
@@ -19,6 +20,7 @@ beforeEach(() => {
 
 
 it('creates one <li> per comment',() => {
+  console.log('log:', wrapped);
 
   expect(1).toEqual(1);
 });
