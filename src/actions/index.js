@@ -1,4 +1,4 @@
-export const CREATE_COMMENT = "create_comment";
+import { CREATE_COMMENT } from 'actions/types';
 
 export function createComment(comment) {
   return {

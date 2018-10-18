@@ -23,7 +23,7 @@ it('has a text area and a button', () => {
 });
 
 describe('the text area', () => {
-  
+
   beforeEach(() => {
     wrapped.find('textarea').simulate('change', {
       target : { value : 'new comment'}
