@@ -5,7 +5,7 @@ import reducers from 'reducers';
 
 export default (props) => {
   return (
-    <Provider store={createStore(reducers, {})}>
+    <Provider store={createStore(reducers, {comments: ['abc','123']})}>
       {props.children}
     </Provider>
   )
