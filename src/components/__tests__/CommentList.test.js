@@ -20,7 +20,10 @@ beforeEach(() => {
 
 
 it('creates one <li> per comment',() => {
-  console.log('log:', wrapped);
+  expect(wrapped.find('li').length).toEqual(2);
+});
 
-  expect(1).toEqual(1);
+it('shows the text for each comment', () => {
+  expect(wrapped.render().text()).toContain('123');
+  expect(wrapped.render().text()).toContain('abc');
 });
