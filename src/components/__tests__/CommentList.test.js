@@ -18,6 +18,10 @@ beforeEach(() => {
 
 });
 
+afterEach(() => {
+  wrapped.unmount();
+});
+
 
 it('creates one <li> per comment',() => {
   expect(wrapped.find('li').length).toEqual(2);
