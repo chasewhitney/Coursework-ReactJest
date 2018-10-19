@@ -4,12 +4,17 @@ import { connect } from 'react-redux';
 
 import CommentBox from 'components/CommentBox';
 import CommentList from 'components/CommentList';
+import { changeAuth } from 'actions';
 
 
 class App extends Component {
+  submitAuth(){
+    console.log('submitting auth:', !this.props.auth);
+    this.props.changeAuth(!this.props.auth);
+  }
   renderButton(){
     return (
-      <button>{this.props.auth.toString()}</button>
+      <button onClick={this.submitAuth.bind(this)}>{this.props.auth.toString()}</button>
     );
   };
 
@@ -38,4 +43,4 @@ function mapStateToProps({ auth }){
   return { auth };
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, { changeAuth })(App);
