@@ -1,5 +1,5 @@
 import React from 'react';
-import CommentReducer from 'reducers/reducer_CreateComment';
+import CommentReducer from 'reducers/reducer_comments';
 import { CREATE_COMMENT } from 'actions/types';
 
 it('properly hands off actions with type CREATE_COMMENT',() => {
