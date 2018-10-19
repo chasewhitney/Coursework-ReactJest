@@ -1,10 +1,13 @@
-import { CREATE_COMMENT } from 'actions/types';
+import { CREATE_COMMENT, FETCH_COMMENTS } from 'actions/types';
 
 export default function(state = [], action) {
   switch(action.type){
     case CREATE_COMMENT:
-      console.log(`received payload: ${action.payload}`);
       return [...state, action.payload];
+    case FETCH_COMMENTS:
+      const data = action.payload.data;
+      const newComs = data.map(item => item.name);
+      return [...state, ...newComs];
     default:
       return state;
   }
