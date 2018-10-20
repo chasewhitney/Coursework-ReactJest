@@ -21,7 +21,7 @@ export default ChildComponent => {
 
     render() {
       return (
-        <ChildComponent />
+        <ChildComponent {...this.props} />
       )
     }
   };
