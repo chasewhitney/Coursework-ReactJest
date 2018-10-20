@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 
 export default ChildComponent => {
   class ComposedComponent extends Component {
@@ -20,9 +21,13 @@ export default ChildComponent => {
 
     render() {
       return (
-        <ChildComponent hoc={"it worked!"}/>
+        <ChildComponent />
       )
     }
-  }
-  return ComposedComponent;
+  };
+  function mapStateToProps({auth}){
+    return {auth};
+  };
+
+  return connect(mapStateToProps)(ComposedComponent);
 };
