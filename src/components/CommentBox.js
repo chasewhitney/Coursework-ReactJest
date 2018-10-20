@@ -19,6 +19,21 @@ class CommentBox extends Component {
     this.props.fetchComments();
   }
 
+  componentDidMount(){
+    this.shouldNavigateAway();
+  }
+
+  componentDidUpdate(){
+    this.shouldNavigateAway();
+  }
+
+  shouldNavigateAway(){
+    if(!this.props.auth){
+      console.log('User not signed in, back you go');
+      this.props.history.push('/');
+    }
+  }
+
   render(){
     return (
       <div>
@@ -35,4 +50,8 @@ class CommentBox extends Component {
   }
 }
 
-export default connect(null, actions)(CommentBox);
+function mapStateToProps({ auth }) {
+  return { auth };
+}
+
+export default connect(mapStateToProps, actions)(CommentBox);

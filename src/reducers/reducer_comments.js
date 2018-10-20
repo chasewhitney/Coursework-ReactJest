@@ -1,7 +1,6 @@
 import { CREATE_COMMENT, FETCH_COMMENTS } from 'actions/types';
 
 export default function(state = [], action) {
-  console.log('hit comments reducer');
   switch(action.type){
     case CREATE_COMMENT:
       return [...state, action.payload];

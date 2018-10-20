@@ -11,11 +11,11 @@ class App extends Component {
     if(this.props.auth) {
       return (
         <button onClick={()=>this.props.changeAuth(false)}>Sign Out</button>
-      )
+      );
     } else {
       return (
         <button onClick={()=>this.props.changeAuth(true)}>Sign In</button>
-      )
+      );
     }
   };
 
