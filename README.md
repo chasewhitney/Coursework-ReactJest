@@ -1,3 +1,5 @@
 ### ReactJest
 
-Simple app built for working with Jest.
+Simple app built to practice:
+* Working with Jest
+* Building higher order component for simple auth

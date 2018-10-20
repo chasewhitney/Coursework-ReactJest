@@ -32,7 +32,7 @@ class CommentBox extends Component {
           </div>
         </form>
         <button className="fetch-comments" onClick={this.handleFetch}>Fetch Comments</button>
-    </div>
+      </div>
     )
   }
 }

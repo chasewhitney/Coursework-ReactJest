@@ -4,7 +4,6 @@ import moxios from 'moxios';
 import Root from 'Root';
 import App from 'components/App';
 
-
 let wrapped;
 
 beforeEach(() => {
