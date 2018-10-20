@@ -6,16 +6,17 @@ import CommentBox from 'components/CommentBox';
 import CommentList from 'components/CommentList';
 import { changeAuth } from 'actions';
 
-
 class App extends Component {
-  submitAuth(){
-    console.log('submitting auth:', !this.props.auth);
-    this.props.changeAuth(!this.props.auth);
-  }
   renderButton(){
-    return (
-      <button onClick={this.submitAuth.bind(this)}>{this.props.auth.toString()}</button>
-    );
+    if(this.props.auth) {
+      return (
+        <button onClick={()=>this.props.changeAuth(false)}>Sign Out</button>
+      )
+    } else {
+      return (
+        <button onClick={()=>this.props.changeAuth(true)}>Sign In</button>
+      )
+    }
   };
 
   renderHeader(){
