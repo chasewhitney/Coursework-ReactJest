@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from 'actions';
 
+import requireAuth from 'components/requireAuth';
+
 class CommentBox extends Component {
   state = { comment: ''};
 
@@ -19,21 +21,6 @@ class CommentBox extends Component {
     this.props.fetchComments();
   }
 
-  componentDidMount(){
-    this.shouldNavigateAway();
-  }
-
-  componentDidUpdate(){
-    this.shouldNavigateAway();
-  }
-
-  shouldNavigateAway(){
-    if(!this.props.auth){
-      console.log('User not signed in, back you go');
-      this.props.history.push('/');
-    }
-  }
-
   render(){
     return (
       <div>
@@ -45,7 +32,7 @@ class CommentBox extends Component {
           </div>
         </form>
         <button className="fetch-comments" onClick={this.handleFetch}>Fetch Comments</button>
-      </div>
+    </div>
     )
   }
 }
@@ -54,4 +41,4 @@ function mapStateToProps({ auth }) {
   return { auth };
 }
 
-export default connect(mapStateToProps, actions)(CommentBox);
+export default connect(mapStateToProps, actions)(requireAuth(CommentBox));
