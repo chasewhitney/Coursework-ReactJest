@@ -17,7 +17,6 @@ export function fetchComments() {
 }
 
 export function changeAuth(isLoggedIn) {
-  console.log('in change auth with:', isLoggedIn);
   return {
     type: CHANGE_AUTH,
     payload: isLoggedIn

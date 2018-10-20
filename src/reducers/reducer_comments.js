@@ -5,7 +5,6 @@ export default function(state = [], action) {
     case CREATE_COMMENT:
       return [...state, action.payload];
     case FETCH_COMMENTS:
-    debugger;
       const data = action.payload.data;
       const newComs = data.map(item => item.name);
       return [...state, ...newComs];
